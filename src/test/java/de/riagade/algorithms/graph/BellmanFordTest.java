@@ -5,6 +5,8 @@ import org.junit.jupiter.api.*;
 
 import java.util.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class BellmanFordTest {
 	public List<Point> points;
@@ -41,11 +43,11 @@ class BellmanFordTest {
 		var shortestPaths = bellmanFord.calculateShortestPaths(start);
 
 		// Then
-		Assertions.assertEquals(0, shortestPaths.get(points.get(0)));
-		Assertions.assertEquals(7, shortestPaths.get(points.get(1)));
-		Assertions.assertEquals(3, shortestPaths.get(points.get(2)));
-		Assertions.assertEquals(-5, shortestPaths.get(points.get(3)));
-		Assertions.assertEquals(2, shortestPaths.get(points.get(4)));
-		Assertions.assertEquals(-9, shortestPaths.get(points.get(5)));
+		assertEquals(0, shortestPaths.get(points.get(0)));
+		assertEquals(7, shortestPaths.get(points.get(1)));
+		assertEquals(3, shortestPaths.get(points.get(2)));
+		assertEquals(-5, shortestPaths.get(points.get(3)));
+		assertEquals(2, shortestPaths.get(points.get(4)));
+		assertEquals(-9, shortestPaths.get(points.get(5)));
 	}
 }
