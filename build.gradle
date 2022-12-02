@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'de.riagade'
+group 'de.riagade.algorithms'
 version '1.0-SNAPSHOT'
 
 repositories {
