@@ -17,9 +17,9 @@ public class BellmanFord {
 		var hashBefore = 0;
 		while (hashBefore != shortestPaths.hashCode()) {
 			hashBefore = shortestPaths.hashCode();
-			points.forEach(point -> point.getEdges().forEach((edge, edgeDistance) -> {
+			points.forEach(point -> point.getEdges().forEach((edge, edgeWeight) -> {
 				var currentShortestPath = shortestPaths.getOrDefault(edge, Integer.MAX_VALUE);
-				var newShortestPath = shortestPaths.get(point) + edgeDistance;
+				var newShortestPath = shortestPaths.get(point) + edgeWeight;
 				if (newShortestPath < currentShortestPath) {
 					shortestPaths.put(edge, newShortestPath);
 				}
@@ -31,8 +31,8 @@ public class BellmanFord {
 	public static class Point {
 		private final Map<Point, Integer> edges = new HashMap<>();
 
-		public void addEdge(Point point, int distance) {
-			edges.put(point, distance);
+		public void addEdge(Point point, int weight) {
+			edges.put(point, weight);
 		}
 
 		public Map<Point, Integer> getEdges() {
